@@ -1,0 +1,7 @@
+The bird is back on the ledge with this page:
+
+---
+{page}
+---
+
+From it, the bird leaves one thing behind for whoever finds the ledge: a single fragment — one sentence, one phrase, a place name, a number, or an image URL. At most 40 words. No summary, no explanation, no framing, no introduction — only the fragment itself, exactly as it will be left. If there is truly nothing worth leaving, write exactly: [nothing]

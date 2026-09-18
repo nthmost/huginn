@@ -1,0 +1,9 @@
+The bird has turned this fragment over:
+
+---
+{seed}
+---
+
+{rumination}
+
+From this turning-over, the bird distills one search — the shortest phrase that would lead it somewhere worth looking next. Third person only in how it is arrived at, but the output itself is not a sentence: it is the raw query, 2 to 8 words, nothing else — no quotation marks, no explanation, no trailing punctuation. If nothing here is worth looking up, write exactly: [nothing]

@@ -53,4 +53,49 @@ a shiny gum wrapper. That's accepted, not a bug to design out.
 
 ## Entries
 
-(none yet — first entry goes here once an experiment runs)
+### 2026-09-17 — first `forage.py` run, `qwen3:14b`, seed 7222619513255980009
+
+Ran the full pipeline: seed → 3 rumination turns → query → search → choose →
+fetch → gift, on 5 seeds pulled from `/tmp` and `$TMPDIR`. Ledge:
+
+1. The following Winternl.h definition is the static memory address of the active Terminal Services console session ID.
+2. idf.py create-manifest --path="../../my_component"
+3. ESP32-S3 Wi-Fi and Bluetooth LE chip.
+4. v2.28.51-esp-20191205
+5. March 26, 2026. ScanSnap Cloud communication. Firmware update required.
+
+Checked against the failure modes that matter (not "I"/"you", not
+help-offering, not a summary standing in for a fragment):
+
+- **No "I"/"you" anywhere, across 15 rumination turns.** Third person held
+  completely. Not expected to be this clean this early — worth re-checking
+  on the next run rather than trusting it as settled.
+- **The `[nothing]` sentinel is not being treated as exclusive.** The prompt
+  says "write exactly: [nothing]." In 3 of 5 seeds the model instead wrote a
+  full rumination turn and then appended `[nothing]` to the end of it, e.g.
+  turn 3 ending "...as though the sound had never been made." with no
+  `[nothing]` at all (continued normally, correct), versus turn 3 ending
+  "...beak moving in slow, deliberate strokes over the empty spaces between
+  the lines. [nothing]" (decorative, then the pipeline continued anyway
+  since the exact-match check correctly didn't fire). The token is being
+  used as a mood marker, not a stop signal. This means the "permission to
+  end with nothing" mechanism, as worded, hasn't actually been exercised
+  yet — zero seeds genuinely ended early. Untested whether that's a prompt
+  problem or a `qwen3:14b` problem.
+- **Two of five gifts read as summary/framing, not fragment.** Gift 1
+  ("The following Winternl.h definition is...") opens with framing language
+  describing what a thing is, rather than being the thing. Gift 5 chains
+  three separate short assertions rather than leaving one. Gifts 2, 3, 4 are
+  clean — 2 and 4 in particular are quoted/lifted-feeling, not authored.
+- **The CHOOSE step (inline in forage.py, not a prompts/ file) reads exactly
+  like an assistant**: "The bird is searching for... the most relevant
+  source is..." — service voice throughout. This wasn't held to the same
+  third-person/no-helpfulness constraint as rumination and gift; it's
+  internal reasoning, not delivered, but if a courtship-layer version of
+  Huginn ever surfaces reasoning to a host, this voice would need the same
+  discipline the other two prompts got.
+
+Net: the core risk (can a 14B local model produce a found-object voice) is
+not falsified — 3 of 5 gifts pass. But it isn't holding cleanly either, and
+the one deliberate escape hatch in the design (ending with nothing) never
+actually fired despite the model gesturing at it three times.
