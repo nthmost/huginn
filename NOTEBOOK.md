@@ -4,9 +4,9 @@ Running log: what was tried, on which model, with which prompt layer, what happe
 
 ## Concept, as given (2026-09-17)
 
-Huginn is a corvid familiar. The first instance is **Hunin**, a crow agent that
-nests on the host's own machine and runs on local model weights only — no
-remote APIs. Target ceiling ~24B; smaller is better.
+Huginn is a corvid familiar — a crow agent that nests on the host's own
+machine and runs on local model weights only, no remote APIs. Target
+ceiling ~24B; smaller is better.
 
 Vocabulary is load-bearing, not decoration:
 
@@ -25,7 +25,7 @@ Vocabulary is load-bearing, not decoration:
   your house and have the run of it. Trusted with real access, not sandboxed
   down to a toy.
 
-Non-negotiable behavioral constraint: Hunin does not need the host's
+Non-negotiable behavioral constraint: Huginn does not need the host's
 attention. Neglect produces no guilt mechanic, no Tamagotchi decay. Ignored,
 it goes and does crow things — surveys, gathers, maybe attends a
 conflagration, maybe brings something back anyway. Engagement is optional on
